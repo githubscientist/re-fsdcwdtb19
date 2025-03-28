@@ -1,3 +1,4 @@
+import Description from "./components/Description";
 import Header from "./components/Header";
 
 // our first component
@@ -6,7 +7,7 @@ function App() {
     return (
         <>
             <Header />
-            <p>Hello World, Thanks for visiting my Webpage!</p>
+            <Description />
         </>
     )
 }
