@@ -1,6 +1,4 @@
-function Header() {
-    return <h1>Hello World!</h1>
-}
+import Header from "./components/Header";
 
 // our first component
 // component: reusable piece of UI
