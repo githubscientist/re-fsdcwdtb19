@@ -4,15 +4,18 @@ import Header from "./components/Header";
 // Base Component
 function App() {
 
-    let a = 50;
-    let b = 60;
+    // create a function to get the values from the child component
+    function get(a, b) {
+        console.log(a, b);
+    }
+
+    // pass the function as a prop to the child component
 
     return (
         <>
             <Header />
             <Description
-                a={a}
-                b={b}
+                get={get}
             />
         </>
     )
