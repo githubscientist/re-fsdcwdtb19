@@ -1,11 +1,9 @@
-function Description(props) {
-
-    console.log(props);
+function Description({ a, b }) {
 
     return (
         <>
             <p>
-                The sum of {props.a} and {props.b} is {props.a + props.b}.
+                The sum of {a} and {b} is {a + b}.
             </p>
         </>
     )
