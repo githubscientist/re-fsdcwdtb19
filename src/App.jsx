@@ -10,9 +10,10 @@ function App() {
     return (
         <>
             <Header />
-            <p>
-                The sum of {a} and {b} is {a + b}.
-            </p>
+            <Description
+                a={a}
+                b={b}
+            />
         </>
     )
 }

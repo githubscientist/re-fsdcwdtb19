@@ -1,8 +1,11 @@
-function Description() {
+function Description(props) {
+
+    console.log(props);
+
     return (
         <>
             <p>
-                This component says hello to the World!
+                The sum of {props.a} and {props.b} is {props.a + props.b}.
             </p>
         </>
     )
