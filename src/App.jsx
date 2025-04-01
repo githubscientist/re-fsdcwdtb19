@@ -1,8 +1,7 @@
 import Description from "./components/Description";
 import Header from "./components/Header";
 
-// our first component
-// component: reusable piece of UI
+// Base Component
 function App() {
     return (
         <>
