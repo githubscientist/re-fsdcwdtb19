@@ -1,23 +1,14 @@
-import Description from "./components/Description";
-import Header from "./components/Header";
+import A from "./components/A";
 
-// Base Component
-function App() {
+const App = () => {
 
-    // create a function to get the values from the child component
-    function get(a, b) {
-        console.log(a, b);
-    }
-
-    // pass the function as a prop to the child component
+    // data in the parent component App
+    let count = 10;
 
     return (
-        <>
-            <Header />
-            <Description
-                get={get}
-            />
-        </>
+        <A
+            count={count}
+        />
     )
 }
 
