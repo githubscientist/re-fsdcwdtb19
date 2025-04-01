@@ -4,18 +4,15 @@ import Header from "./components/Header";
 // Base Component
 function App() {
 
-    let birthdate = new Date("1990-01-04");
-    let today = new Date();
-
-    let age = today.getFullYear() - birthdate.getFullYear();
-
-    console.log(age);
-
+    let a = 50;
+    let b = 60;
 
     return (
         <>
             <Header />
-            <Description />
+            <p>
+                The sum of {a} and {b} is {a + b}.
+            </p>
         </>
     )
 }
