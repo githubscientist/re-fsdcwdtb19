@@ -1,14 +1,30 @@
-import A from "./components/A";
+// named function
+// function App() {
+//     return (
+//         <div>App</div>
+//     )
+// }
+
+// nameless function or function expression
+// const App = function () {
+//     return (
+//         <div>App</div>
+//     )
+// }
+
+// arrow function
+// const App = () => {
+//     return (
+//         <div>App</div>
+//     )
+// }
+
+// one liner arrow function
+// const App = () => <div>App</div>;
 
 const App = () => {
-
-    // data in the parent component App
-    let count = 10;
-
     return (
-        <A
-            count={count}
-        />
+        <div>App</div>
     )
 }
 

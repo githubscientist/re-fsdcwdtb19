@@ -27,3 +27,31 @@
 Props drilling is a term used in React to describe the process of passing data from a parent component to a deeply nested child component through multiple layers of intermediate components.
 
 This can lead to a situation where components that do not need the data are forced to accept it as props just to pass it down to their children. This can make the code harder to read and maintain, especially in larger applications.
+
+## Hooks
+
+[x] What is hooks? Why it is required?
+[ ] useState, useEffect
+[ ] API calling using useEffect
+[ ] Rendering API data in jsx
+[ ] Keys in Array
+[ ] React Forms
+[ ] useMemo & useCallback
+[ ] useReducer & useRef
+[ ] Array methods: push, pop, map, reduce, filter, forEach, slice, splice, indexOf
+[ ] React Router V6
+
+### What is hooks? Why it is required?
+
+Hooks:
+
+- Earlier, React components were class-based (Stateful components).
+- class components - state and lifecycle methods.
+- class components are more complex and harder to read.
+
+- on the other hand, functional components are simpler and easier to read.
+- but functional components do not have state and lifecycle methods.
+- Hooks were introduced in React 16.8 (February 2019) to allow functional components to have state and lifecycle methods.
+
+- Hooks are functions that let you use state and other React features in functional components.
+- Now, functional components are the preferred way to write React components.
