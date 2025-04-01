@@ -31,7 +31,7 @@ This can lead to a situation where components that do not need the data are forc
 ## Hooks
 
 [x] What is hooks? Why it is required?
-[ ] useState, useEffect
+[x] useState, useEffect
 [ ] API calling using useEffect
 [ ] Rendering API data in jsx
 [ ] Keys in Array
