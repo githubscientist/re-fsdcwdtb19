@@ -32,9 +32,9 @@ This can lead to a situation where components that do not need the data are forc
 
 [x] What is hooks? Why it is required?
 [x] useState, useEffect
-[ ] API calling using useEffect
-[ ] Rendering API data in jsx
-[ ] Keys in Array
+[x] API calling using useEffect
+[x] Rendering API data in jsx
+[x] Keys in Array
 [ ] React Forms
 [ ] useMemo & useCallback
 [ ] useReducer & useRef
@@ -55,3 +55,13 @@ Hooks:
 
 - Hooks are functions that let you use state and other React features in functional components.
 - Now, functional components are the preferred way to write React components.
+
+### API Requests
+
+- API: Application Programming Interface
+- API is a set of rules and protocols for building and interacting with software applications.
+- If we use HTTP methods (GET, POST, PUT, DELETE) to interact with an API, it is called REST API.
+- API requests are made using:
+  - XHR: XMLHttpRequest
+  - Fetch: A modern way to make API requests in JavaScript.
+  - Axios: A popular library for making API requests in JavaScript.

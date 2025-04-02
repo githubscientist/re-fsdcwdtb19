@@ -1,38 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+
+// Promise: A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+// Promise Chaining: Promise chaining is a technique used to handle asynchronous operations in JavaScript. It allows you to execute a series of asynchronous tasks in a sequence, where each task depends on the result of the previous one.
+// It is achieved by returning a new promise from the `then` method of the previous promise.
 
 const App = () => {
 
-    const [positives, setPositives] = useState(0);
-    const [negatives, setNegatives] = useState(0);
-
-    // this runs when the component mounts
-    // it will also run when the component updates
-    // useEffect(() => {
-    //     console.log('App mounted');
-    // });
-
-    // this runs when the component mounts and only once
-    // useEffect(() => {
-    //     console.log('App mounted');
-    // }, []);
-
-    // this runs when the component mounts
-    // and when the negatives state changes
     useEffect(() => {
-        console.log('App mounted');
-    }, [negatives]);
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+            .then((response) => {
+                // success callback
+                return response.json();
+            })
+            .then((posts) => {
+                console.log(posts);
+            })
+            .catch(() => {
+                // error callback
+                console.log('api call failed');
+            })
+    }, []);
 
     return (
-        <>
-            <div>
-                <h1>Positives: {positives}</h1>
-                <button onClick={() => setPositives(positives + 1)}>Positive Inc</button>
-            </div>
-            <div>
-                <h1>Negatives: {negatives}</h1>
-                <button onClick={() => setNegatives(negatives + 1)}>Negative Inc</button>
-            </div>
-        </>
+        <div>App</div>
     )
 }
 
