@@ -12,9 +12,15 @@ const App = () => {
     // });
 
     // this runs when the component mounts and only once
+    // useEffect(() => {
+    //     console.log('App mounted');
+    // }, []);
+
+    // this runs when the component mounts
+    // and when the negatives state changes
     useEffect(() => {
         console.log('App mounted');
-    }, []);
+    }, [negatives]);
 
     return (
         <>
