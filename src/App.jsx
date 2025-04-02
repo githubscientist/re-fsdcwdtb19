@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Promise: A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
@@ -6,6 +6,8 @@ import { useEffect } from "react";
 // It is achieved by returning a new promise from the `then` method of the previous promise.
 
 const App = () => {
+
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -20,7 +22,7 @@ const App = () => {
                 return response.json();
             })
             .then((posts) => {
-                console.log(posts);
+                setPosts(posts);
             })
             .catch(() => {
                 // error callback
@@ -28,8 +30,23 @@ const App = () => {
             })
     }, []);
 
+    useEffect(() => {
+        console.log(posts);
+    }, [posts]);
+
     return (
-        <div>App</div>
+        <>
+            <h1>Posts</h1>
+            {
+                posts.map(post => {
+                    return <div>
+                        <h3>{post.id}: {post.title}</h3>
+                        <p><em>{post.body}</em></p>
+                        <hr />
+                    </div>
+                })
+            }
+        </>
     )
 }
 
