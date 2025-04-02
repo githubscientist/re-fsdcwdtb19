@@ -1,69 +1,21 @@
-// Functional Component: Stateless Component
-// const App = () => {
-//     return (
-//         <div>App</div>
-//     )
-// }
+import { useEffect, useState } from "react";
 
-// Class Component: Stateful Component
-import React from "react";
+const App = () => {
 
-class App extends React.Component {
-    // constrctor: a special method that is called when an instance or object of the class is created
-    constructor(props) {
-        super(props); // calls the constructor of the parent class React
+    const [count, setCount] = useState(0);
 
-        this.state = {
-            count: 0,
-            isVisible: true
-        }
-    }
+    // this runs when the component mounts
+    // it will also run when the component updates
+    useEffect(() => {
+        console.log('App mounted');
+    });
 
-    handleIncrement = () => {
-        // this.setState((prevState) => ({
-        //     count: prevState.count + 1
-        // }));
-
-        this.setState({
-            count: this.state.count + 1
-        })
-    }
-
-    // lifecycle methods
-    componentDidMount() {
-        // this is called when the component is mounted
-        console.log("Component mounted");
-    }
-
-    componentDidUpdate() {
-        // this is called when the component is updated
-        console.log("Component updated");
-    }
-
-    componentWillUnmount() {
-        // this is called when the component is unmounted
-        console.log("Component unmounted");
-    }
-
-    render() {
-        return (
-            <>
-                <button
-                    onClick={() => this.setState({ ...this.state, isVisible: !this.state.isVisible })}
-                >Hide</button>
-                {
-                    this.state.isVisible && (
-                        <div>
-                            <h1>Count: {this.state.count}</h1>
-                            <button
-                                onClick={this.handleIncrement}
-                            >Increment</button>
-                        </div>
-                    )
-                }
-            </>
-        )
-    }
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+    )
 }
 
 export default App;
