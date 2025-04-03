@@ -79,3 +79,20 @@ Hooks:
 - PATCH: Used to update a resource on the server.
 - PUT: Used to update a resource on the server (replaces the entire resource).
 - DELETE: Used to delete a resource on the server.
+
+### SPA
+
+- SPA: Single Page Application
+- React is used to build SPAs.
+- In SPAs, the entire application is loaded on a single HTML page.
+
+## React Router
+
+- React are basically used to build SPAs.
+- Creating multiple HTML pages is not a good practice in React.
+
+  - First, is because the url will not change.
+  - Second, is because the entire application will be reloaded.
+  - Third, browser will not be able to cache the pages.
+
+- React Router is a library that allows you to create a single-page application with navigation.
