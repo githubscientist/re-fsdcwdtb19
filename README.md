@@ -38,8 +38,12 @@ This can lead to a situation where components that do not need the data are forc
 [ ] React Forms
 [ ] useMemo & useCallback
 [ ] useReducer & useRef
-[ ] Array methods: push, pop, map, reduce, filter, forEach, slice, splice, indexOf
+[x] Array methods: push, pop, map, reduce, filter, forEach, slice, splice, indexOf
 [ ] React Router V6
+[ ] What is Routes
+[x] Types of HTTP Methods (get,post, patch & Delete)
+[x] Real time explanation with json placeholder
+[x] npm i axios
 
 ### What is hooks? Why it is required?
 
@@ -65,3 +69,13 @@ Hooks:
   - XHR: XMLHttpRequest
   - Fetch: A modern way to make API requests in JavaScript.
   - Axios: A popular library for making API requests in JavaScript.
+
+### Types of Methods
+
+#### HTTP Methods
+
+- GET: Used to retrieve data from a server.
+- POST: Used to send data to a server to create a new resource.
+- PATCH: Used to update a resource on the server.
+- PUT: Used to update a resource on the server (replaces the entire resource).
+- DELETE: Used to delete a resource on the server.
