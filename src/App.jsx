@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 // Promise: A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
@@ -12,22 +13,11 @@ const App = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then((response) => {
-                // success callback
-                return response.json();
-            })
-            .then((posts) => {
-                setPosts(posts);
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then(response => {
+                console.log(response.data);
             })
             .catch(() => {
-                // error callback
                 console.log('api call failed');
             })
     }, []);
