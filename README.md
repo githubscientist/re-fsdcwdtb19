@@ -35,15 +35,16 @@ This can lead to a situation where components that do not need the data are forc
 [x] API calling using useEffect
 [x] Rendering API data in jsx
 [x] Keys in Array
-[ ] React Forms
+[x] React Forms
 [ ] useMemo & useCallback
 [ ] useReducer & useRef
 [x] Array methods: push, pop, map, reduce, filter, forEach, slice, splice, indexOf
-[ ] React Router V6
-[ ] What is Routes
+[x] React Router V6 --Basic setup, Children
+[x] What is Routes
 [x] Types of HTTP Methods (get,post, patch & Delete)
 [x] Real time explanation with json placeholder
 [x] npm i axios
+[x] Tailwindcss
 
 ### What is hooks? Why it is required?
 
@@ -96,3 +97,8 @@ Hooks:
   - Third, browser will not be able to cache the pages.
 
 - React Router is a library that allows you to create a single-page application with navigation.
+
+### React Forms
+
+- Controlled Components: Components that are controlled by React via state.
+- Uncontrolled Components: Components that are not controlled by React via state.
