@@ -1,16 +1,25 @@
-import { useState } from "react";
+import { useReducer } from "react";
+
+function reducer(state, action) {
+    if (action.type === 'INCR') {
+        return state + 1;
+    }
+
+    return state;
+}
+
 
 const App = () => {
 
-    const [count, setCount] = useState(0);
+    const [state, dispatch] = useReducer(reducer, 0);
 
     function handleClick() {
-        setCount(count + 1);
+        dispatch({ type: 'INCR' });
     }
 
     return (
         <div>
-            <h1>Count: {count}</h1>
+            <h1>Count: {state}</h1>
             <button onClick={handleClick}>Increment</button>
         </div>
     )
