@@ -1,47 +1,19 @@
-import Home from "./pages/Home";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import Layout from "./wrappers/Layout";
-import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router";
-
-// Create a router object
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Layout />,
-        children: [
-            {
-                path: "",
-                element: <Home />
-            },
-            {
-                path: "register",
-                element: <Register />
-            },
-            {
-                path: "login",
-                element: <Login />
-            }
-        ]
-    },
-], {
-    future: {
-        v7_relativeSplatPath: true,
-        v7_fetcherPersist: true,
-        v7_normalizeFormMethod: true,
-        v7_partialHydration: true,
-        v7_skipActionErrorRevalidation: true,
-    }
-})
+import { useState } from "react";
 
 const App = () => {
-    return <RouterProvider
-        router={router}
-        future={{
-            v7_startTransition: true,
-        }}
-    />
+
+    const [count, setCount] = useState(0);
+
+    function handleClick() {
+        setCount(count + 1);
+    }
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={handleClick}>Increment</button>
+        </div>
+    )
 }
 
 export default App;
