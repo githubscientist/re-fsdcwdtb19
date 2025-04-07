@@ -1,11 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Notes from "./pages/Notes";
+import Notes, { notesLoader } from "./pages/Notes";
+
 
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Notes />
+        element: <Notes />,
+        loader: notesLoader,
+        hydrateFallbackElement: <div>Loading...</div>,
     }
 ], {
     future: {
