@@ -102,3 +102,8 @@ Hooks:
 
 - Controlled Components: Components that are controlled by React via state.
 - Uncontrolled Components: Components that are not controlled by React via state.
+
+### usestate vs useReducer
+
+- useState: A hook that allows you to add state to functional components.
+- useReducer: A hook that allows you to manage complex state logic in functional components.
