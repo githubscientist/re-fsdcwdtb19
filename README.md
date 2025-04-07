@@ -37,7 +37,7 @@ This can lead to a situation where components that do not need the data are forc
 [x] Keys in Array
 [x] React Forms
 [ ] useMemo & useCallback
-[ ] useReducer & useRef
+[x] useReducer & useRef
 [x] Array methods: push, pop, map, reduce, filter, forEach, slice, splice, indexOf
 [x] React Router V6 --Basic setup, Children
 [x] What is Routes
