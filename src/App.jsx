@@ -1,28 +1,25 @@
 import { useRef } from "react";
 
-// Uncontrolled Component
-// A component that does not control the input value
 const App = () => {
 
-    const name = useRef(null);
+    // using ordinary js variables
+    // variable value changes does not causes component re-rendering.
+    let count = useRef(0);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('form submitted');
-        console.log(name.current);
+    const handleIncrease = () => {
+        // increase the count value
+        count.current = count.current + 1;
+
+        // print the count.current
+        console.log(count.current);
     }
+
+    console.log(count);
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Enter your name"
-                    ref={name}
-                />
-
-                <input type="submit" />
-            </form>
+            <h1>Counter: {count.current}</h1>
+            <button onClick={handleIncrease}>Increase</button>
         </div>
     )
 }
