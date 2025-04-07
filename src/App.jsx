@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useRef } from "react";
 
-// Controlled component
-// Here, we use the useState hook to manage the state of the input field.
+// Uncontrolled Component
+// A component that does not control the input value
 const App = () => {
 
-    const [name, setName] = useState('');
+    const name = useRef(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('form submitted!');
-        console.log(name);
+        console.log('form submitted');
+        console.log(name.current);
     }
 
     return (
@@ -18,8 +18,7 @@ const App = () => {
                 <input
                     type="text"
                     placeholder="Enter your name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    ref={name}
                 />
 
                 <input type="submit" />
