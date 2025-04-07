@@ -107,3 +107,8 @@ Hooks:
 
 - useState: A hook that allows you to add state to functional components.
 - useReducer: A hook that allows you to manage complex state logic in functional components.
+
+### useRef
+
+- useRef: A hook that allows you to create a mutable reference that persists for the full lifetime of the component.
+- It can be used to access DOM elements directly or to store mutable values that do not cause re-renders when updated.

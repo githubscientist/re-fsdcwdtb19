@@ -1,42 +1,30 @@
-import { useReducer } from "react";
+import { useEffect, useState } from "react";
 
-const reducer = (state, action) => {
-    if (action.type == 'INCR') {
-        return state + 1;
-    } else if (action.type == 'DECR') {
-        return state - 1;
-    } else if (action.type == 'RESET') {
-        return 0;
-    }
-
-    return state;
-}
-
+// Controlled component
+// Here, we use the useState hook to manage the state of the input field.
 const App = () => {
 
-    const [count, dispatch] = useReducer(reducer, 0);
+    const [name, setName] = useState('');
 
-    const handleIncrease = () => {
-        dispatch({ type: 'INCR' });
-    }
-
-    const handleDecrease = () => {
-        dispatch({ type: 'DECR' });
-    }
-
-    const handleReset = () => {
-        dispatch({ type: 'RESET' });
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('form submitted!');
+        console.log(name);
     }
 
     return (
-        <>
-            <h1>Counter: {count}</h1>
-            <button onClick={handleIncrease}>Increase</button>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
 
-            <button onClick={handleDecrease}>Decrease</button>
-
-            <button onClick={handleReset}>Reset</button>
-        </>
+                <input type="submit" />
+            </form>
+        </div>
     )
 }
 
