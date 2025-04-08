@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 const Notes = () => {
 
@@ -19,7 +19,7 @@ const Notes = () => {
                 {
                     notes
                         .map((note) => {
-                            return <li key={note.id}>{note.title}</li>
+                            return <li key={note.id}><Link to={`/note/${note.id}`}>{note.title}</Link></li>
                         })
                 }
             </ul>
