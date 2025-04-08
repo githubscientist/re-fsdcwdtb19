@@ -1,7 +1,7 @@
-const noteLoader = async ({ params }) => {
+const noteLoader = async ({ request }) => {
 
     // read the params id from the URL
-    const { id } = params;
+    const id = new URL(request.url).searchParams.get("id")
 
     const response = await fetch(`https://67f3ed22cbef97f40d2cb280.mockapi.io/notes/${id}`)
     const data = await response.json();

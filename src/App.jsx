@@ -12,11 +12,11 @@ const routes = [
         hydrateFallbackElement: <div>Loading...</div>,
     },
     {
-        path: "/note/:id",
+        path: "/note",
         element: <Note />,
         loader: noteLoader,
         hydrateFallbackElement: <div>Loading...</div>,
-    }   
+    }
 ];
 
 const router = createBrowserRouter(routes, {
