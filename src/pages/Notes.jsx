@@ -1,11 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLoaderData } from "react-router";
-
-export const notesLoader = async () => {
-    const response = await fetch('https://67f3ed22cbef97f40d2cb280.mockapi.io/notes')
-    const data = await response.json();
-    return data;
-}
 
 const Notes = () => {
 

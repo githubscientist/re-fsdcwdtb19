@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Notes, { notesLoader } from "./pages/Notes";
-
-
+import Notes from "./pages/Notes";
+import notesLoader from "./loaders/unit/notesLoader";
 
 const router = createBrowserRouter([
     {
