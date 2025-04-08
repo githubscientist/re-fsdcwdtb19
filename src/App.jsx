@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Notes from "./pages/Notes";
 import notesLoader from "./loaders/unit/notesLoader";
 import Note from "./pages/Note";
+import noteLoader from "./loaders/unit/noteLoader";
 
 const routes = [
     {
@@ -12,8 +13,10 @@ const routes = [
     },
     {
         path: "/note/:id",
-        element: <Note />
-    }
+        element: <Note />,
+        loader: noteLoader,
+        hydrateFallbackElement: <div>Loading...</div>,
+    }   
 ];
 
 const router = createBrowserRouter(routes, {
