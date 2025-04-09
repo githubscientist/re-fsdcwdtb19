@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import instance from "../services/instance";
+import noteServices from "../services/noteServices";
 
 const New = () => {
 
@@ -12,10 +13,7 @@ const New = () => {
         e.preventDefault();
 
         // make an api call to create a note
-        instance.post('/notes', {
-            title: title,
-            description: description
-        })
+        noteServices.createNote({ title, description })
             .then((response) => {
                 alert('Note Created Successfully');
 

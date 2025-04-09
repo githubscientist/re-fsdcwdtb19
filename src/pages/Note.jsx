@@ -1,5 +1,5 @@
 import { useLoaderData, useNavigate } from "react-router";
-import instance from "../services/instance";
+import noteServices from "../services/noteServices";
 
 const Note = () => {
 
@@ -10,7 +10,7 @@ const Note = () => {
         let confirmDelete = confirm("Are you sure you want to delete this note?");
         if (confirmDelete) {
             // make an api call to delete the note
-            instance.delete(`/notes/${note.id}`)
+            noteServices.deleteNote(note.id)
                 .then(response => {
                     // show an alert to the user that the note has been deleted
                     alert("Note deleted successfully");
@@ -22,7 +22,8 @@ const Note = () => {
                     alert("Error deleting note");
                 })
         } else {
-
+            // do nothing
+            return;
         }
     }
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router";
 import instance from "../services/instance";
+import noteServices from "../services/noteServices";
 
 const Edit = () => {
 
@@ -20,10 +21,7 @@ const Edit = () => {
         e.preventDefault();
 
         // make an api call to update the note
-        instance.put(`/notes/${note.id}`, {
-            title: title,
-            description: description
-        })
+        noteServices.updateNote(note.id, { title, description })
             .then(response => {
                 alert("Note updated successfully");
 

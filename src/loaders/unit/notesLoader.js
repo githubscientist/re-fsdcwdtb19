@@ -1,7 +1,7 @@
-import instance from "../../services/instance";
+import noteServices from "../../services/noteServices";
 
 const notesLoader = async () => {
-    const response = await instance.get('/notes');
+    const response = await noteServices.getAllNotes();
     return response.data;
 }
 
