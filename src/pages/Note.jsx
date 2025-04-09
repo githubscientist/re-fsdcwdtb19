@@ -1,4 +1,5 @@
 import { useLoaderData, useNavigate } from "react-router";
+import instance from "../services/instance";
 
 const Note = () => {
 
@@ -9,9 +10,7 @@ const Note = () => {
         let confirmDelete = confirm("Are you sure you want to delete this note?");
         if (confirmDelete) {
             // make an api call to delete the note
-            fetch(`https://67f3ed22cbef97f40d2cb280.mockapi.io/notes/${note.id}`, {
-                method: "DELETE"
-            })
+            instance.delete(`/notes/${note.id}`)
                 .then(response => {
                     // show an alert to the user that the note has been deleted
                     alert("Note deleted successfully");

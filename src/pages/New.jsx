@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import instance from "../services/instance";
 
 const New = () => {
 
@@ -11,15 +12,9 @@ const New = () => {
         e.preventDefault();
 
         // make an api call to create a note
-        fetch('https://67f3ed22cbef97f40d2cb280.mockapi.io/notes', {
-            method: 'POST',
-            body: JSON.stringify({
-                title: title,
-                description: description
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        instance.post('/notes', {
+            title: title,
+            description: description
         })
             .then((response) => {
                 alert('Note Created Successfully');

@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router";
+import instance from "../services/instance";
 
 const Edit = () => {
 
@@ -20,7 +20,7 @@ const Edit = () => {
         e.preventDefault();
 
         // make an api call to update the note
-        axios.put(`https://67f3ed22cbef97f40d2cb280.mockapi.io/notes/${note.id}`, {
+        instance.put(`/notes/${note.id}`, {
             title: title,
             description: description
         })
