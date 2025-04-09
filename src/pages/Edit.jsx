@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router";
 
@@ -19,15 +20,9 @@ const Edit = () => {
         e.preventDefault();
 
         // make an api call to update the note
-        fetch(`https://67f3ed22cbef97f40d2cb280.mockapi.io/notes/${note.id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                title,
-                description
-            })
+        axios.put(`https://67f3ed22cbef97f40d2cb280.mockapi.io/notes/${note.id}`, {
+            title: title,
+            description: description
         })
             .then(response => {
                 alert("Note updated successfully");
