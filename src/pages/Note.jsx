@@ -27,13 +27,17 @@ const Note = () => {
         }
     }
 
+    const handleEdit = () => {
+        navigate('/edit?id=' + note.id);
+    }
+
     return (
         <div>
             <h2>{note.title}</h2>
             <p>{note.description}</p>
             <div style={{ display: "flex", gap: "1rem", alignItems: "center", justifyContent: "start" }}>
                 <div>
-                    <button>Edit</button>
+                    <button onClick={handleEdit}>Edit</button>
                 </div>
                 <div>
                     <button onClick={handleDelete}>Delete</button>

@@ -4,6 +4,7 @@ import notesLoader from "./loaders/unit/notesLoader";
 import Note from "./pages/Note";
 import noteLoader from "./loaders/unit/noteLoader";
 import New from "./pages/New";
+import Edit from "./pages/Edit";
 
 const routes = [
     {
@@ -21,6 +22,12 @@ const routes = [
     {
         path: "/new",
         element: <New />
+    },
+    {
+        path: "/edit",
+        element: <Edit />,
+        loader: noteLoader,
+        hydrateFallbackElement: <div>Loading...</div>,
     }
 ];
 
