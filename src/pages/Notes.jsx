@@ -1,15 +1,20 @@
 import { useEffect } from "react";
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData, useNavigate } from "react-router";
 
 const Notes = () => {
 
     const notes = useLoaderData();
+    const navigate = useNavigate();
 
     useEffect(() => {
         // runs when the component renders
         // and whenever the state notes changes
         console.log(notes);
     }, [notes]);
+
+    const handleAddNote = () => {
+        navigate('/new');
+    }
 
     return (
         <div>
@@ -23,6 +28,10 @@ const Notes = () => {
                         })
                 }
             </ul>
+
+            <div>
+                <button onClick={handleAddNote}>New Note</button>
+            </div>
         </div>
     )
 }
