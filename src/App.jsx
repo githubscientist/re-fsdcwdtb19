@@ -47,7 +47,7 @@ const App = () => {
         future={{
             v7_startTransition: true,
         }}
-    />;
+    />
 }
 
 export default App;

@@ -1,13 +1,15 @@
-import { useState } from "react";
 import { useNavigate } from "react-router";
-import instance from "../services/instance";
 import noteServices from "../services/noteServices";
+import { useDispatch, useSelector } from "react-redux";
+import { selectDescription, selectTitle, setDescription, setTitle } from "../redux/features/newNoteSlice";
 
 const New = () => {
 
     const navigate = useNavigate();
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+    const title = useSelector(selectTitle);
+    const description = useSelector(selectDescription);
+
+    const dispatch = useDispatch();
 
     const handleCreate = (e) => {
         e.preventDefault();
@@ -18,8 +20,8 @@ const New = () => {
                 alert('Note Created Successfully');
 
                 // clear the form
-                setTitle("");
-                setDescription("");
+                dispatch(setTitle(''));
+                dispatch(setDescription(''));
 
                 // take the user to the home page or notes page
                 navigate('/');
@@ -40,7 +42,7 @@ const New = () => {
                         type="text"
                         placeholder="Title"
                         value={title}
-                        onChange={(e) => setTitle(e.target.value)}
+                        onChange={(e) => dispatch(setTitle(e.target.value))}
                     />
                 </div>
                 <br />
@@ -50,7 +52,7 @@ const New = () => {
                         rows={5}
                         cols={30}
                         value={description}
-                        onChange={(e) => setDescription(e.target.value)}
+                        onChange={(e) => dispatch(setDescription(e.target.value))}
                     />
                 </div>
 
