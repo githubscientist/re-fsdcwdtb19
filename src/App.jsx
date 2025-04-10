@@ -1,19 +1,13 @@
-import { useReducer } from "react";
-
-const reducer = (state, action) => {
-    if (action.type === 'Incr') {
-        return state + 1;
-    }
-
-    return state;
-}
+import { useDispatch, useSelector } from "react-redux";
+import { increment, selectCount } from "./redux/features/counterSlice";
 
 const App = () => {
 
-    const [count, dispatch] = useReducer(reducer, 0);
+    const count = useSelector(selectCount);
+    const dispatch = useDispatch();
 
     const handleIncrement = () => {
-        dispatch({ type: 'Incr' });
+        dispatch(increment());
     }
 
     return (
