@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useReducer } from "react";
+
+const reducer = (state, action) => {
+    if (action.type === 'Incr') {
+        return state + 1;
+    }
+
+    return state;
+}
 
 const App = () => {
 
-    const [count, setCount] = useState(0);
+    const [count, dispatch] = useReducer(reducer, 0);
 
     const handleIncrement = () => {
-        setCount(count + 1);
+        dispatch({ type: 'Incr' });
     }
 
     return (
