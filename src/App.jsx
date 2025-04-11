@@ -1,53 +1,21 @@
-import { createBrowserRouter, RouterProvider } from "react-router";
-import Notes from "./pages/Notes";
-import notesLoader from "./loaders/unit/notesLoader";
-import Note from "./pages/Note";
-import noteLoader from "./loaders/unit/noteLoader";
-import New from "./pages/New";
-import Edit from "./pages/Edit";
+import React, { createContext, useState } from 'react'
+import A from './components/A';
 
-const routes = [
-    {
-        path: "/",
-        element: <Notes />,
-        loader: notesLoader,
-        hydrateFallbackElement: <div>Loading...</div>,
-    },
-    {
-        path: "/note",
-        element: <Note />,
-        loader: noteLoader,
-        hydrateFallbackElement: <div>Loading...</div>,
-    },
-    {
-        path: "/new",
-        element: <New />
-    },
-    {
-        path: "/edit",
-        element: <Edit />,
-        loader: noteLoader,
-        hydrateFallbackElement: <div>Loading...</div>,
-    }
-];
+// create a new context
+export const CountContext = createContext();
 
-const router = createBrowserRouter(routes, {
-    future: {
-        v7_relativeSplatPath: true,
-        v7_fetcherPersist: true,
-        v7_normalizeFormMethod: true,
-        v7_partialHydration: true,
-        v7_skipActionErrorRevalidation: true,
-    }
-});
-
+// props drilling
 const App = () => {
-    return <RouterProvider
-        router={router}
-        future={{
-            v7_startTransition: true,
-        }}
-    />
+
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <CountContext.Provider value={{ count, setCount }}>
+                <A />
+            </CountContext.Provider>
+        </div>
+    )
 }
 
-export default App;
+export default App
