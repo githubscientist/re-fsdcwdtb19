@@ -1,20 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLoaderData, useNavigate } from "react-router";
-import instance from "../services/instance";
 import noteServices from "../services/noteServices";
+import { useDispatch, useSelector } from "react-redux";
+import { selectDescription, selectTitle, setDescription, setTitle } from "../redux/features/updateNoteSlice";
 
 const Edit = () => {
 
     const note = useLoaderData();
 
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+    const title = useSelector(selectTitle);
+    const description = useSelector(selectDescription);
+
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        setTitle(note.title);
-        setDescription(note.description);
+        dispatch(setTitle(note.title));
+        dispatch(setDescription(note.description));
     }, []);
 
     const handleUpdate = (e) => {
@@ -41,7 +44,7 @@ const Edit = () => {
                         type="text"
                         placeholder="Title"
                         value={title}
-                        onChange={(e) => setTitle(e.target.value)}
+                        onChange={(e) => dispatch(setTitle(e.target.value))}
                     />
                 </div>
                 <br />
@@ -51,7 +54,7 @@ const Edit = () => {
                         rows={5}
                         cols={30}
                         value={description}
-                        onChange={(e) => setDescription(e.target.value)}
+                        onChange={(e) => dispatch(setDescription(e.target.value))}
                     />
                 </div>
 
